@@ -121,6 +121,33 @@ app.post("/recipes", (req, res) => {
 });
 
 
+// DELETE /recipes/:id
+app.delete("/recipes/:id", (req, res) => {
+  try {
+    const recipeId = req.params.id;
+    const recipes = getRecipes();
+
+    const recipeIndex = recipes.findIndex(
+      (recipe) => recipe.id === recipeId
+    );
+
+    if (recipeIndex === -1) {
+      return res.status(404).json({ error: "Recipe not found" });
+    }
+
+    const deletedRecipe = recipes.splice(recipeIndex, 1);
+    saveRecipes(recipes);
+
+    res.json({
+      message: "Recipe deleted successfully",
+      deletedRecipeId: deletedRecipe[0].id
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Could not delete recipe" });
+  }
+});
+
+
 
 // START SERVER
 app.listen(PORT, () => {
