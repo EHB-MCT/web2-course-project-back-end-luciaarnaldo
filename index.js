@@ -219,6 +219,50 @@ app.post("/users", (req, res) => {
 });
 
 
+// POST /login
+app.post("/login", (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({ error: "Missing email or password" });
+    }
+
+    const users = getUsers();
+
+    // EASTER EGG: if an existing user uses the secret password,
+    // return a special message without performing a real login
+
+    const secretUser = users.find((user) => user.email === email);
+
+    if (secretUser && password === "chefmaster") {
+        return res.json({
+            message: `👨‍🍳 Welcome back, ${secretUser.username}! You found the secret.`
+        });
+    }
+
+
+    const user = users.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    if (!user) {
+      return res
+        .status(401)
+        .json({ error: "Invalid email or password" });
+    }
+
+    res.json({
+      message: "Login successful",
+      userId: user.id,
+      username: user.username
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Login failed" });
+  }
+});
+
+
 // START SERVER
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
