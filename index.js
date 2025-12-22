@@ -13,7 +13,8 @@ const __dirname = path.dirname(__filename);
 // Middleware
 app.use(express.json());
 
-// Helper function to read recipes
+
+// RECIPES HELPERS
 const getRecipes = () => {
   const dataPath = path.join(__dirname, "data", "recipes.json");
   const data = fs.readFileSync(dataPath, "utf-8");
@@ -25,11 +26,47 @@ const saveRecipes = (recipes) => {
   fs.writeFileSync(dataPath, JSON.stringify(recipes, null, 2));
 };
 
+const generateRecipeId = (recipes) => {
+  if (recipes.length === 0) return "r001";
 
-// ROUTE
+  const lastRecipe = recipes[recipes.length - 1];
+  const lastIdNumber = parseInt(lastRecipe.id.replace("r", ""));
+  const newIdNumber = lastIdNumber + 1;
+
+  return "r" + newIdNumber.toString().padStart(3, "0");
+};
+
+
+// USERS HELPERS
+const getUsers = () => {
+  const dataPath = path.join(__dirname, "data", "users.json");
+  const data = fs.readFileSync(dataPath, "utf-8");
+  return JSON.parse(data);
+};
+
+const saveUsers = (users) => {
+  const dataPath = path.join(__dirname, "data", "users.json");
+  fs.writeFileSync(dataPath, JSON.stringify(users, null, 2));
+};
+
+const generateUserId = (users) => {
+  if (users.length === 0) return "u001";
+
+  const lastUser = users[users.length - 1];
+  const lastIdNumber = parseInt(lastUser.id.replace("u", ""));
+  const newIdNumber = lastIdNumber + 1;
+
+  return "u" + newIdNumber.toString().padStart(3, "0");
+};
+
+
+
+// RECIPES ROUTES
+
 app.get("/", (req, res) => {
   res.send("Recipe API is running");
 });
+
 
 // GET /recipes/:id  
 app.get("/recipes/:id", (req, res) => {
@@ -48,6 +85,7 @@ app.get("/recipes/:id", (req, res) => {
     res.status(500).json({ error: "Could not retrieve recipe." });
   }
 });
+
 
 // GET /recipes (with filters)
 app.get("/recipes", (req, res) => {
@@ -78,16 +116,6 @@ app.get("/recipes", (req, res) => {
 
 
 // POST /recipes
-const generateRecipeId = (recipes) => {
-  if (recipes.length === 0) return "r001";
-
-  const lastRecipe = recipes[recipes.length - 1];
-  const lastIdNumber = parseInt(lastRecipe.id.replace("r", ""));
-  const newIdNumber = lastIdNumber + 1;
-
-  return "r" + newIdNumber.toString().padStart(3, "0");
-};
-
 app.post("/recipes", (req, res) => {
   try {
     const { name, difficulty, time, type, ingredients, preparation } = req.body;
@@ -147,6 +175,48 @@ app.delete("/recipes/:id", (req, res) => {
   }
 });
 
+
+// USERS ROUTES
+
+// POST /users
+app.post("/users", (req, res) => {
+  try {
+    const { username, email, password } = req.body;
+
+    if (!username || !email || !password) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    const users = getUsers();
+
+    const userExists = users.find(
+      (user) => user.email === email || user.username === username
+    );
+
+    if (userExists) {
+      return res
+        .status(400)
+        .json({ error: "Email or username already exists" });
+    }
+
+    const newUser = {
+      id: generateUserId(users),
+      username,
+      email,
+      password
+    };
+
+    users.push(newUser);
+    saveUsers(users);
+
+    res.status(201).json({
+      message: "User created successfully",
+      userId: newUser.id
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Could not create user" });
+  }
+});
 
 
 // START SERVER
