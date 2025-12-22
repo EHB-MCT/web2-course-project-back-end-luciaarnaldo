@@ -78,6 +78,16 @@ app.get("/recipes", (req, res) => {
 
 
 // POST /recipes
+const generateRecipeId = (recipes) => {
+  if (recipes.length === 0) return "r001";
+
+  const lastRecipe = recipes[recipes.length - 1];
+  const lastIdNumber = parseInt(lastRecipe.id.replace("r", ""));
+  const newIdNumber = lastIdNumber + 1;
+
+  return "r" + newIdNumber.toString().padStart(3, "0");
+};
+
 app.post("/recipes", (req, res) => {
   try {
     const { name, difficulty, time, type, ingredients, preparation } = req.body;
@@ -89,7 +99,7 @@ app.post("/recipes", (req, res) => {
     const recipes = getRecipes();
 
     const newRecipe = {
-      id: "r" + Date.now(),
+      id: generateRecipeId(recipes),
       name,
       difficulty,
       time,
