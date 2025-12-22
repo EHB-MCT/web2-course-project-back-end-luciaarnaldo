@@ -43,15 +43,33 @@ app.get("/recipes/:id", (req, res) => {
   }
 });
 
-// GET /recipes  
+// GET /recipes (with filters)
 app.get("/recipes", (req, res) => {
   try {
-    const recipes = getRecipes();
+    let recipes = getRecipes();
+
+    const { ingredient, time, type } = req.query;
+
+    if (ingredient) {
+      recipes = recipes.filter(recipe =>
+        recipe.ingredients.includes(ingredient)
+      );
+    }
+
+    if (time) {
+      recipes = recipes.filter(recipe => recipe.time === time);
+    }
+
+    if (type) {
+      recipes = recipes.filter(recipe => recipe.type === type);
+    }
+
     res.json(recipes);
   } catch (error) {
     res.status(500).json({ error: "Could not retrieve recipes." });
   }
 });
+
 
 
 
