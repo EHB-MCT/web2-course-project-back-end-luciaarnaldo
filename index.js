@@ -20,6 +20,12 @@ const getRecipes = () => {
   return JSON.parse(data);
 };
 
+const saveRecipes = (recipes) => {
+  const dataPath = path.join(__dirname, "data", "recipes.json");
+  fs.writeFileSync(dataPath, JSON.stringify(recipes, null, 2));
+};
+
+
 // ROUTE
 app.get("/", (req, res) => {
   res.send("Recipe API is running");
@@ -70,6 +76,39 @@ app.get("/recipes", (req, res) => {
   }
 });
 
+
+// POST /recipes
+app.post("/recipes", (req, res) => {
+  try {
+    const { name, difficulty, time, type, ingredients, preparation } = req.body;
+
+    if (!name || !difficulty || !time || !type || !ingredients || !preparation) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    const recipes = getRecipes();
+
+    const newRecipe = {
+      id: "r" + Date.now(),
+      name,
+      difficulty,
+      time,
+      type,
+      ingredients,
+      preparation
+    };
+
+    recipes.push(newRecipe);
+    saveRecipes(recipes);
+
+    res.status(201).json({
+      message: "Recipe created successfully",
+      createdRecipeId: newRecipe.id
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Could not create recipe" });
+  }
+});
 
 
 
