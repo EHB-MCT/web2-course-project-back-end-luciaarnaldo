@@ -237,7 +237,7 @@ app.post("/login", (req, res) => {
 
     if (secretUser && password === "chefmaster") {
         return res.json({
-            message: `👨‍🍳 Welcome back, ${secretUser.username}! You found the secret.`
+            message: ` Welcome back, ${secretUser.username}! You found the secret.`
         });
     }
 
