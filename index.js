@@ -1,17 +1,36 @@
+// Imports
+import "dotenv/config";
 import express from "express";
+import mongoose from "mongoose";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
+// App initialitation
 const app = express();
 const PORT = 3000;
+
+// MongoDB connection
+console.log("MONGO URI:", process.env.MONGO_URI);
+
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("MongoDB connected");
+  })
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+  });
+
 
 // Needed to use __dirname with ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Middleware
+
 app.use(express.json());
+
+
 
 
 // RECIPES HELPERS

@@ -4,10 +4,9 @@
   "description": "[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=22052624)\r # Your project name ✨\r A short description of your project. Aim for 2-3 liness. \\",
   "main": "index.js",
   "scripts": {
-  "start": "node index.js"
+    "start": "node index.js"
   },
   "type": "module",
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EHB-MCT/web2-course-project-back-end-luciaarnaldo.git"
@@ -20,6 +19,9 @@
   },
   "homepage": "https://github.com/EHB-MCT/web2-course-project-back-end-luciaarnaldo#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongodb": "^7.0.0",
+    "mongoose": "^9.0.2"
   }
 }
