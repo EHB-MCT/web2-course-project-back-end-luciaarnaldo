@@ -2,239 +2,188 @@
 import "dotenv/config";
 import express from "express";
 import mongoose from "mongoose";
-import recipesRouter from "./routes/recipes.routes.js";
-// import usersRouter from "./routes/users.routes.js";
+import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
 
+// Models
+import Recipe from "./models/Recipe.js";
+import User from "./models/User.js";
+
+// Path helpers
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // App initialitation
 const app = express();
 const PORT = 3000;
 
+// Middleware
+app.use(cors());
 app.use(express.json());
-
+app.use("/images", express.static(path.join(__dirname, "images")));
 
 // MongoDB connection
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
-  .catch(err => console.error(err));
+  .catch((err) => console.error(err));
 
-
-// Routes
-app.use("/recipes", recipesRouter);
-// app.use("/users", usersRouter);
-
-
-
-
-// RECIPES HELPERS
-// const getRecipes = () => {
-//   const dataPath = path.join(__dirname, "data", "recipes.json");
-//   const data = fs.readFileSync(dataPath, "utf-8");
-//   return JSON.parse(data);
-// };
-
-// const saveRecipes = (recipes) => {
-//   const dataPath = path.join(__dirname, "data", "recipes.json");
-//   fs.writeFileSync(dataPath, JSON.stringify(recipes, null, 2));
-// };
-
-// const generateRecipeId = (recipes) => {
-//   if (recipes.length === 0) return "r001";
-
-//   const lastRecipe = recipes[recipes.length - 1];
-//   const lastIdNumber = parseInt(lastRecipe.id.replace("r", ""));
-//   const newIdNumber = lastIdNumber + 1;
-
-//   return "r" + newIdNumber.toString().padStart(3, "0");
-// };
-
-
-// USERS HELPERS
-const getUsers = () => {
-  const dataPath = path.join(__dirname, "data", "users.json");
-  const data = fs.readFileSync(dataPath, "utf-8");
-  return JSON.parse(data);
-};
-
-const saveUsers = (users) => {
-  const dataPath = path.join(__dirname, "data", "users.json");
-  fs.writeFileSync(dataPath, JSON.stringify(users, null, 2));
-};
-
-const generateUserId = (users) => {
-  if (users.length === 0) return "u001";
-
-  const lastUser = users[users.length - 1];
-  const lastIdNumber = parseInt(lastUser.id.replace("u", ""));
-  const newIdNumber = lastIdNumber + 1;
-
-  return "u" + newIdNumber.toString().padStart(3, "0");
-};
-
-
-
-// RECIPES ROUTES
+/* -------------------- BASIC ROUTE -------------------- */
 
 app.get("/", (req, res) => {
   res.send("Recipe API is running");
 });
 
+/* -------------------- RECIPES ROUTES -------------------- */
 
-// // GET /recipes/:id 
-// app.get("/recipes/:id", (req, res) => {
-//   try {
-//     const recipes = getRecipes();
-//     const recipeId = req.params.id;
-
-//     const recipe = recipes.find(r => r.id === recipeId);
-
-//     if (!recipe) {
-//       return res.status(404).json({ error: "Recipe not found" });
-//     }
-
-//     res.json(recipe);
-//   } catch (error) {
-//     res.status(500).json({ error: "Could not retrieve recipe." });
-//   }
-// });
-
-
-// // GET /recipes (with filters) -> MongoDB version
-// app.get("/recipes", async (req, res) => {
-//   try {
-//     const { ingredient, time, type } = req.query;
-//     const filter = {};
-
-//     if (ingredient) {
-//       filter.ingredients = { $in: [ingredient] };
-//     }
-
-//     if (time) {
-//       filter.time = time;
-//     }
-
-//     if (type) {
-//       filter.type = type;
-//     }
-
-//     const recipes = await Recipe.find(filter);
-//     res.json(recipes);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Could not retrieve recipes." });
-//   }
-// });
-
-
-
-
-// // POST /recipes
-// app.post("/recipes", (req, res) => {
-//   try {
-//     const { name, difficulty, time, type, ingredients, preparation } = req.body;
-
-//     if (!name || !difficulty || !time || !type || !ingredients || !preparation) {
-//       return res.status(400).json({ error: "Missing required fields" });
-//     }
-
-//     const recipes = getRecipes();
-
-//     const newRecipe = {
-//       id: generateRecipeId(recipes),
-//       name,
-//       difficulty,
-//       time,
-//       type,
-//       ingredients,
-//       preparation
-//     };
-
-//     recipes.push(newRecipe);
-//     saveRecipes(recipes);
-
-//     res.status(201).json({
-//       message: "Recipe created successfully",
-//       createdRecipeId: newRecipe.id
-//     });
-//   } catch (error) {
-//     res.status(500).json({ error: "Could not create recipe" });
-//   }
-// });
-
-
-// // DELETE /recipes/:id
-// app.delete("/recipes/:id", (req, res) => {
-//   try {
-//     const recipeId = req.params.id;
-//     const recipes = getRecipes();
-
-//     const recipeIndex = recipes.findIndex(
-//       (recipe) => recipe.id === recipeId
-//     );
-
-//     if (recipeIndex === -1) {
-//       return res.status(404).json({ error: "Recipe not found" });
-//     }
-
-//     const deletedRecipe = recipes.splice(recipeIndex, 1);
-//     saveRecipes(recipes);
-
-//     res.json({
-//       message: "Recipe deleted successfully",
-//       deletedRecipeId: deletedRecipe[0].id
-//     });
-//   } catch (error) {
-//     res.status(500).json({ error: "Could not delete recipe" });
-//   }
-// });
-
-
-// USERS ROUTES
-
-// POST /users
-app.post("/users", (req, res) => {
+// GET /recipes (with filters)
+app.get("/recipes", async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const { ingredient, time, type } = req.query;
+    const filter = {};
 
-    if (!username || !email || !password) {
+    if (ingredient) {
+      filter.ingredients = { $in: [ingredient] };
+    }
+
+    if (time) {
+      filter.time = time;
+    }
+
+    if (type) {
+      filter.type = type;
+    }
+
+    const recipes = await Recipe.find(filter);
+    res.json(recipes);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Could not retrieve recipes" });
+  }
+});
+
+// GET /recipes/:id
+app.get("/recipes/:id", async (req, res) => {
+  try {
+    const recipe = await Recipe.findOne({ id: req.params.id });
+
+    if (!recipe) {
+      return res.status(404).json({ error: "Recipe not found" });
+    }
+
+    res.json(recipe);
+  } catch (error) {
+    res.status(500).json({ error: "Could not retrieve recipe" });
+  }
+});
+
+// POST /recipes
+app.post("/recipes", async (req, res) => {
+  try {
+    const { id, name, image, difficulty, time, type, ingredients, preparation } =
+      req.body;
+
+    if (
+      !id ||
+      !name ||
+      !image ||
+      !difficulty ||
+      !time ||
+      !type ||
+      !ingredients ||
+      !preparation
+    ) {
       return res.status(400).json({ error: "Missing required fields" });
     }
 
-    const users = getUsers();
+    const recipeExists = await Recipe.findOne({ id });
+    if (recipeExists) {
+      return res.status(400).json({ error: "Recipe ID already exists" });
+    }
 
-    const userExists = users.find(
-      (user) => user.email === email || user.username === username
-    );
+    const newRecipe = new Recipe({
+      id,
+      name,
+      image,
+      difficulty,
+      time,
+      type,
+      ingredients,
+      preparation,
+    });
 
-    if (userExists) {
+    await newRecipe.save();
+
+    res.status(201).json({
+      message: "Recipe created successfully",
+      recipeId: newRecipe.id,
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Could not create recipe" });
+  }
+});
+
+// DELETE /recipes/:id
+app.delete("/recipes/:id", async (req, res) => {
+  try {
+    const deletedRecipe = await Recipe.findOneAndDelete({
+      id: req.params.id,
+    });
+
+    if (!deletedRecipe) {
+      return res.status(404).json({ error: "Recipe not found" });
+    }
+
+    res.json({
+      message: "Recipe deleted successfully",
+      deletedRecipeId: deletedRecipe.id,
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Could not delete recipe" });
+  }
+});
+
+/* -------------------- USERS ROUTES -------------------- */
+
+// POST /users → Register
+app.post("/users", async (req, res) => {
+  try {
+    const { id, username, email, password } = req.body;
+
+    if (!id || !username || !email || !password) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    const existingUser = await User.findOne({
+      $or: [{ email }, { username }],
+    });
+
+    if (existingUser) {
       return res
         .status(400)
         .json({ error: "Email or username already exists" });
     }
 
-    const newUser = {
-      id: generateUserId(users),
-      username,
-      email,
-      password
-    };
-
-    users.push(newUser);
-    saveUsers(users);
+    const newUser = new User({ id, username, email, password });
+    await newUser.save();
 
     res.status(201).json({
       message: "User created successfully",
-      userId: newUser.id
+      user: {
+        id: newUser.id,
+        username: newUser.username,
+        email: newUser.email,
+      },
     });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ error: "Could not create user" });
   }
 });
 
-
-// POST /login
-app.post("/login", (req, res) => {
+// POST /users/login → Login + Easter Egg
+app.post("/users/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -242,42 +191,40 @@ app.post("/login", (req, res) => {
       return res.status(400).json({ error: "Missing email or password" });
     }
 
-    const users = getUsers();
-
-    // EASTER EGG: if an existing user uses the secret password,
-    // return a special message without performing a real login
-
-    const secretUser = users.find((user) => user.email === email);
-
-    if (secretUser && password === "chefmaster") {
-        return res.json({
-            message: ` Welcome back, ${secretUser.username}! You found the secret.`
-        });
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(401).json({ error: "Invalid email or password" });
     }
 
+    // EASTER EGG
+    if (password === "chefmaster") {
+      return res.json({
+        message: `Welcome back, ${user.username}! You found the secret.`,
+        userId: user.id,
+        username: user.username,
+        easterEgg: true,
+      });
+    }
 
-    const user = users.find(
-      (user) => user.email === email && user.password === password
-    );
-
-    if (!user) {
-      return res
-        .status(401)
-        .json({ error: "Invalid email or password" });
+    if (user.password !== password) {
+      return res.status(401).json({ error: "Invalid email or password" });
     }
 
     res.json({
-      message: "Login successful",
-      userId: user.id,
-      username: user.username
+      user: {
+        id: user.id,
+        username: user.username,
+        email: user.email,
+      },
     });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ error: "Login failed" });
   }
 });
 
+/* -------------------- START SERVER -------------------- */
 
-// START SERVER
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

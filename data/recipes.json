@@ -2,657 +2,509 @@
   {
     "id": "r001",
     "name": "Chicken Curry",
+    "image": "chicken-curry.jpg",
     "difficulty": "medium",
     "time": "20-30",
     "type": "lunch",
-    "ingredients": [
-      "chicken",
-      "rice",
-      "onion",
-      "garlic",
-      "spices"
-    ],
-    "preparation": "1. Cut the chicken into small pieces. 2. Chop the onion and garlic. 3. Heat oil in a pan and cook the onion and garlic until soft. 4. Add the chicken and spices and cook until browned. 5. Add water and simmer for 15 minutes. 6. Serve with cooked rice."
+    "ingredients": ["chicken", "rice", "onion", "garlic", "spices"],
+    "preparation": "Cut the chicken into medium-sized pieces and set it aside. Finely chop the onion and garlic. Heat oil in a large pan over medium heat and cook the onion and garlic until soft and fragrant. Add the chicken and spices, stirring well so the flavors combine. Pour in a small amount of water and let everything simmer gently until the chicken is fully cooked and the sauce has thickened. Serve warm with cooked rice."
   },
   {
     "id": "r002",
     "name": "Spaghetti Carbonara",
+    "image": "spaghetti-carbonara.jpg",
     "difficulty": "easy",
     "time": "15-20",
     "type": "dinner",
-    "ingredients": [
-      "spaghetti",
-      "egg",
-      "cheese",
-      "bacon",
-      "pepper"
-    ],
-    "preparation": "1. Cook spaghetti in salted water. 2. Fry bacon until crispy. 3. Beat eggs with cheese and pepper. 4. Mix pasta with bacon and egg mixture quickly. 5. Serve immediately."
+    "ingredients": ["pasta", "egg", "cheese", "bacon", "pepper"],
+    "preparation": "Cook the spaghetti in salted water until al dente. Fry the bacon in a pan until crispy. In a bowl, mix the eggs with grated cheese and black pepper. Drain the pasta and combine it immediately with the bacon. Remove from heat and add the egg mixture, stirring quickly to create a creamy sauce. Serve immediately while hot."
   },
   {
     "id": "r003",
     "name": "Vegetable Stir Fry",
+    "image": "vegetable-stir-fry.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "dinner",
-    "ingredients": [
-      "broccoli",
-      "carrot",
-      "pepper",
-      "soy sauce",
-      "oil"
-    ],
-    "preparation": "1. Wash and cut vegetables. 2. Heat oil in a wok. 3. Cook vegetables on high heat. 4. Add soy sauce and stir. 5. Serve hot."
+    "ingredients": ["broccoli", "carrot", "pepper", "soy sauce", "oil"],
+    "preparation": "Wash and cut the vegetables into small pieces. Heat oil in a wok or large pan over high heat. Add the vegetables and stir continuously so they remain crisp. Pour in the soy sauce and mix well so the vegetables are evenly coated. Serve immediately."
   },
   {
     "id": "r004",
     "name": "Beef Stew",
+    "image": "beef-stew.jpg",
     "difficulty": "hard",
     "time": "+30",
     "type": "lunch",
-    "ingredients": [
-      "beef",
-      "potato",
-      "carrot",
-      "onion",
-      "broth"
-    ],
-    "preparation": "1. Cut beef into chunks. 2. Chop vegetables. 3. Brown beef in a pot. 4. Add vegetables and broth. 5. Simmer for 45 minutes until tender."
+    "ingredients": ["beef", "potato", "carrot", "onion", "broth"],
+    "preparation": "Cut the beef into large chunks and season lightly. Chop the vegetables into similar-sized pieces. Heat oil in a deep pot and brown the beef on all sides. Add the vegetables and stir briefly. Pour in the broth, cover the pot, and let the stew cook slowly until the meat is tender and the sauce is rich."
   },
   {
     "id": "r005",
     "name": "Caesar Salad",
+    "image": "caesar-salad.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "lunch",
-    "ingredients": [
-      "lettuce",
-      "chicken",
-      "cheese",
-      "croutons",
-      "sauce"
-    ],
-    "preparation": "1. Wash lettuce. 2. Grill chicken and slice it. 3. Combine lettuce, chicken, cheese and croutons. 4. Add sauce and mix well."
+    "ingredients": ["lettuce", "chicken", "cheese", "croutons", "sauce"],
+    "preparation": "Wash and dry the lettuce thoroughly and cut it into large pieces. Grill the chicken until golden and slice it. Place the lettuce in a bowl and add the chicken, cheese, and croutons. Add the sauce just before serving and mix gently."
   },
   {
     "id": "r006",
     "name": "Grilled Salmon",
+    "image": "grilled-salmon.jpg",
     "difficulty": "medium",
     "time": "15-20",
     "type": "dinner",
-    "ingredients": [
-      "salmon",
-      "lemon",
-      "salt",
-      "pepper"
-    ],
-    "preparation": "1. Season salmon. 2. Heat grill or pan. 3. Cook salmon 4 minutes per side. 4. Add lemon juice before serving."
+    "ingredients": ["salmon", "lemon", "salt", "pepper"],
+    "preparation": "Season the salmon with salt, pepper, and lemon juice. Heat a grill or pan and cook the salmon until golden on both sides and tender inside. Serve hot with extra lemon if desired."
   },
   {
     "id": "r007",
     "name": "Tomato Soup",
+    "image": "tomato-soup.jpg",
     "difficulty": "easy",
     "time": "20-30",
     "type": "lunch",
-    "ingredients": [
-      "tomato",
-      "onion",
-      "garlic",
-      "broth"
-    ],
-    "preparation": "1. Chop onion and garlic. 2. Cook until soft. 3. Add tomatoes and broth. 4. Simmer 20 minutes. 5. Blend until smooth."
+    "ingredients": ["tomato", "onion", "garlic", "broth"],
+    "preparation": "Chop the onion and garlic and cook them gently in a pot with oil until soft. Add the tomatoes and broth and let everything simmer so the flavors blend. Blend until smooth and serve warm."
   },
   {
     "id": "r008",
     "name": "Pancakes",
+    "image": "pancakes.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "breakfast",
-    "ingredients": [
-      "flour",
-      "milk",
-      "egg",
-      "sugar"
-    ],
-    "preparation": "1. Mix ingredients in a bowl. 2. Heat pan. 3. Pour batter. 4. Cook until golden on both sides."
+    "ingredients": ["flour", "milk", "egg", "sugar"],
+    "preparation": "Mix all ingredients in a bowl until a smooth batter forms. Heat a pan lightly greased and pour in some batter. Cook until bubbles appear, flip, and cook until golden. Continue until all batter is used."
   },
   {
     "id": "r009",
     "name": "Omelette",
+    "image": "omelette.jpg",
     "difficulty": "easy",
     "time": "5-10",
     "type": "breakfast",
-    "ingredients": [
-      "egg",
-      "salt",
-      "oil"
-    ],
-    "preparation": "1. Beat eggs with salt. 2. Heat oil. 3. Cook eggs until set. 4. Fold and serve."
+    "ingredients": ["egg", "salt", "oil"],
+    "preparation": "Beat the eggs with salt. Heat oil in a pan and pour in the eggs. Cook gently until set, fold the omelette, and serve warm."
   },
   {
     "id": "r010",
     "name": "Pizza Margherita",
+    "image": "pizza-margherita.jpg",
     "difficulty": "medium",
     "time": "+30",
     "type": "dinner",
-    "ingredients": [
-      "dough",
-      "tomato",
-      "cheese",
-      "basil"
-    ],
-    "preparation": "1. Preheat oven. 2. Spread tomato on dough. 3. Add cheese. 4. Bake 20 minutes. 5. Add basil."
+    "ingredients": ["dough", "tomato", "cheese", "basil"],
+    "preparation": "Preheat the oven. Spread tomato sauce over the dough and add cheese. Bake until the crust is crispy and the cheese is melted. Finish with fresh basil before serving."
   },
+
   {
     "id": "r011",
     "name": "Avocado Toast",
+    "image": "avocado-toast.jpg",
     "difficulty": "easy",
     "time": "5-10",
     "type": "breakfast",
-    "ingredients": [
-      "bread",
-      "avocado",
-      "salt",
-      "olive oil"
-    ],
-    "preparation": "1. Toast bread. 2. Mash avocado with salt. 3. Spread on toast. 4. Add olive oil."
+    "ingredients": ["bread", "avocado", "salt", "olive oil"],
+    "preparation": "Toast the bread until golden. Mash the avocado with salt and spread it over the toast. Drizzle with olive oil and serve immediately."
   },
   {
     "id": "r012",
     "name": "Chicken Wrap",
+    "image": "chicken-wrap.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "lunch",
-    "ingredients": [
-      "chicken",
-      "tortilla",
-      "lettuce",
-      "sauce"
-    ],
-    "preparation": "1. Cook chicken. 2. Warm tortilla. 3. Add chicken and lettuce. 4. Roll and serve."
+    "ingredients": ["chicken", "tortilla", "lettuce", "sauce"],
+    "preparation": "Cook the chicken until golden and slice it. Warm the tortilla and fill it with chicken, lettuce, and sauce. Roll tightly and serve."
   },
   {
     "id": "r013",
     "name": "Rice with Vegetables",
+    "image": "rice-with-vegetables.jpg",
     "difficulty": "easy",
     "time": "15-20",
     "type": "lunch",
-    "ingredients": [
-      "rice",
-      "peas",
-      "carrot",
-      "oil"
-    ],
-    "preparation": "1. Cook rice. 2. Fry vegetables. 3. Mix with rice. 4. Season and serve."
+    "ingredients": ["rice", "peas", "carrot", "oil"],
+    "preparation": "Cook the rice until tender. Fry the vegetables in oil until soft. Mix the vegetables with the rice and serve warm."
   },
   {
     "id": "r014",
     "name": "Chicken Pasta",
+    "image": "chicken-pasta.jpg",
     "difficulty": "medium",
     "time": "20-30",
     "type": "dinner",
-    "ingredients": [
-      "pasta",
-      "chicken",
-      "cream",
-      "cheese"
-    ],
-    "preparation": "1. Cook pasta. 2. Cook chicken. 3. Add cream and cheese. 4. Mix with pasta."
+    "ingredients": ["pasta", "chicken", "cream", "cheese"],
+    "preparation": "Cook the pasta until al dente. Cook the chicken in a pan until done. Add cream and cheese to the chicken and stir until creamy. Mix with the pasta and serve."
   },
   {
     "id": "r015",
     "name": "Fruit Salad",
+    "image": "fruit-salad.jpg",
     "difficulty": "easy",
     "time": "5-10",
     "type": "breakfast",
-    "ingredients": [
-      "apple",
-      "banana",
-      "orange"
-    ],
-    "preparation": "1. Wash fruit. 2. Cut into pieces. 3. Mix and serve fresh."
+    "ingredients": ["apple", "banana", "orange"],
+    "preparation": "Wash and cut the fruit into small pieces. Place everything in a bowl and mix gently. Serve fresh."
   },
+
   {
     "id": "r016",
     "name": "Hamburger",
+    "image": "hamburger.jpg",
     "difficulty": "medium",
     "time": "15-20",
     "type": "dinner",
-    "ingredients": [
-      "beef",
-      "bun",
-      "lettuce",
-      "tomato"
-    ],
-    "preparation": "1. Shape beef patty. 2. Grill patty. 3. Toast bun. 4. Assemble burger."
+    "ingredients": ["beef", "bun", "cheese", "lettuce", "tomato"],
+    "preparation": "Form a beef patty and cook it on a hot grill or pan until done. Toast the bun lightly and assemble the burger with cheese and vegetables. Serve hot."
   },
   {
     "id": "r017",
     "name": "Chicken Soup",
+    "image": "chicken-soup.jpg",
     "difficulty": "easy",
     "time": "20-30",
     "type": "lunch",
-    "ingredients": [
-      "chicken",
-      "carrot",
-      "broth"
-    ],
-    "preparation": "1. Boil broth. 2. Add chicken and vegetables. 3. Simmer 25 minutes."
+    "ingredients": ["chicken", "carrot", "broth"],
+    "preparation": "Bring the broth to a boil. Add the chicken and carrots and cook gently until tender. Serve warm."
   },
   {
     "id": "r018",
     "name": "Fried Rice",
+    "image": "fried-rice.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "dinner",
-    "ingredients": [
-      "rice",
-      "egg",
-      "soy sauce"
-    ],
-    "preparation": "1. Fry egg. 2. Add rice. 3. Add soy sauce. 4. Stir well."
+    "ingredients": ["rice", "egg", "soy sauce"],
+    "preparation": "Cook the egg in a pan while stirring. Add the rice and fry briefly. Pour in soy sauce and mix well before serving."
   },
   {
     "id": "r019",
     "name": "Baked Potatoes",
+    "image": "baked-potatoes.jpg",
     "difficulty": "easy",
     "time": "+30",
     "type": "lunch",
-    "ingredients": [
-      "potato",
-      "oil",
-      "salt"
-    ],
-    "preparation": "1. Preheat oven. 2. Cut potatoes. 3. Season. 4. Bake 35 minutes."
+    "ingredients": ["potato", "oil", "salt"],
+    "preparation": "Preheat the oven. Cut the potatoes into pieces and place them on a baking tray. Season with oil and salt and bake until golden and crispy."
   },
   {
     "id": "r020",
     "name": "Tuna Salad",
+    "image": "tuna-salad.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "lunch",
-    "ingredients": [
-      "tuna",
-      "lettuce",
-      "tomato"
-    ],
-    "preparation": "1. Drain tuna. 2. Chop vegetables. 3. Mix and season."
+    "ingredients": ["tuna", "lettuce", "cucumber", "tomato"],
+    "preparation": "Drain the tuna well. Chop the vegetables and mix everything in a bowl. Season to taste and serve fresh."
   },
+
   {
     "id": "r021",
     "name": "French Toast",
+    "image": "french-toast.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "breakfast",
-    "ingredients": [
-      "bread",
-      "egg",
-      "milk"
-    ],
-    "preparation": "1. Mix egg and milk. 2. Dip bread. 3. Fry until golden."
+    "ingredients": ["bread", "egg", "milk"],
+    "preparation": "Mix the egg and milk in a bowl. Dip the bread slices into the mixture and fry them in a pan until golden on both sides. Serve warm."
   },
   {
     "id": "r022",
     "name": "Chicken Nuggets",
+    "image": "chicken-nuggets.jpg",
     "difficulty": "easy",
     "time": "15-20",
     "type": "dinner",
-    "ingredients": [
-      "chicken",
-      "breadcrumbs",
-      "oil"
-    ],
-    "preparation": "1. Cut chicken. 2. Coat with breadcrumbs. 3. Fry until crispy."
+    "ingredients": ["chicken", "breadcrumbs", "oil"],
+    "preparation": "Cut the chicken into small pieces and coat them with breadcrumbs. Fry in hot oil until golden and crispy. Drain and serve."
   },
   {
     "id": "r023",
     "name": "Pasta Salad",
+    "image": "pasta-salad.jpg",
     "difficulty": "easy",
     "time": "15-20",
     "type": "lunch",
-    "ingredients": [
-      "pasta",
-      "tomato",
-      "olive oil"
-    ],
-    "preparation": "1. Cook pasta. 2. Chop tomato. 3. Mix and season."
+    "ingredients": ["pasta", "tomato", "olives", "olive oil"],
+    "preparation": "Cook the pasta and let it cool slightly. Chop the tomato and mix it with the pasta and olives. Season with olive oil and serve."
   },
   {
     "id": "r024",
     "name": "Scrambled Eggs",
+    "image": "scrambled-eggs.jpg",
     "difficulty": "easy",
     "time": "5-10",
     "type": "breakfast",
-    "ingredients": [
-      "egg",
-      "butter"
-    ],
-    "preparation": "1. Beat eggs. 2. Melt butter. 3. Cook eggs slowly."
+    "ingredients": ["egg", "butter"],
+    "preparation": "Beat the eggs lightly. Melt butter in a pan and cook the eggs slowly while stirring until creamy. Serve immediately."
   },
   {
     "id": "r025",
     "name": "Veggie Wrap",
+    "image": "veggie-wrap.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "lunch",
-    "ingredients": [
-      "tortilla",
-      "vegetables",
-      "sauce"
-    ],
-    "preparation": "1. Cook vegetables. 2. Warm tortilla. 3. Fill and roll."
+    "ingredients": ["tortilla", "lettuce", "tomato", "carrot", "sauce"],
+    "preparation": "Cook the vegetables lightly. Warm the tortilla and fill it with vegetables and sauce. Roll and serve."
   },
+
   {
     "id": "r026",
     "name": "Chicken Rice Bowl",
+    "image": "chicken-rice-bowl.jpg",
     "difficulty": "easy",
     "time": "15-20",
     "type": "lunch",
-    "ingredients": [
-      "chicken",
-      "rice",
-      "vegetables"
-    ],
-    "preparation": "1. Cook rice. 2. Cook chicken. 3. Combine in bowl."
+    "ingredients": ["chicken", "rice", "broccoli"],
+    "preparation": "Cook the rice until tender. Cook the chicken and broccoli separately. Combine everything in a bowl and serve warm."
   },
   {
     "id": "r027",
     "name": "Grilled Cheese",
+    "image": "grilled-cheese.jpg",
     "difficulty": "easy",
     "time": "5-10",
     "type": "breakfast",
-    "ingredients": [
-      "bread",
-      "cheese",
-      "butter"
-    ],
-    "preparation": "1. Butter bread. 2. Add cheese. 3. Grill until melted."
+    "ingredients": ["bread", "cheese", "butter"],
+    "preparation": "Butter the bread and place cheese between slices. Grill in a pan until the bread is golden and the cheese has melted."
   },
   {
     "id": "r028",
     "name": "Pasta Bolognese",
+    "image": "pasta-bolognese.jpg",
     "difficulty": "medium",
     "time": "20-30",
     "type": "dinner",
-    "ingredients": [
-      "pasta",
-      "meat",
-      "tomato"
-    ],
-    "preparation": "1. Cook meat. 2. Add tomato sauce. 3. Cook pasta. 4. Mix."
+    "ingredients": ["pasta", "meat", "tomato"],
+    "preparation": "Cook the meat in a pan until browned. Add tomato sauce and let it simmer. Cook the pasta and mix with the sauce before serving."
   },
   {
     "id": "r029",
     "name": "Chicken Salad",
+    "image": "chicken-salad.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "lunch",
-    "ingredients": [
-      "chicken",
-      "lettuce",
-      "sauce"
-    ],
-    "preparation": "1. Cook chicken. 2. Chop lettuce. 3. Mix and serve."
+    "ingredients": ["chicken", "lettuce", "sauce"],
+    "preparation": "Cook the chicken and cut it into pieces. Chop the lettuce and mix everything together with sauce. Serve fresh."
   },
   {
     "id": "r030",
     "name": "Smoothie",
+    "image": "smoothie.jpg",
     "difficulty": "easy",
     "time": "5-10",
     "type": "breakfast",
-    "ingredients": [
-      "banana",
-      "milk",
-      "berries"
-    ],
-    "preparation": "1. Add all ingredients to blender. 2. Blend until smooth."
+    "ingredients": ["banana", "milk", "berries"],
+    "preparation": "Place all ingredients in a blender and blend until smooth. Serve immediately."
   },
+
   {
     "id": "r031",
     "name": "Chicken Tacos",
+    "image": "chicken-tacos.jpg",
     "difficulty": "easy",
     "time": "15-20",
     "type": "dinner",
-    "ingredients": [
-      "chicken",
-      "tortilla",
-      "vegetables"
-    ],
-    "preparation": "1. Cook chicken. 2. Warm tortillas. 3. Fill and serve."
+    "ingredients": ["chicken", "tortilla", "vegetables"],
+    "preparation": "Cook the chicken until well done. Warm the tortillas and fill them with chicken and vegetables. Serve hot."
   },
   {
     "id": "r032",
-    "name": "Rice Omelette",
+    "name": "Tuna Sandwich",
+    "image": "tuna-sandwich.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "lunch",
-    "ingredients": [
-      "rice",
-      "egg"
-    ],
-    "preparation": "1. Mix rice with egg. 2. Cook in pan until set."
+    "ingredients": ["tuna", "bread", "mayonnaise"],
+    "preparation": "Mix the tuna with mayonnaise. Spread the mixture on bread and serve."
   },
   {
     "id": "r033",
     "name": "Baked Chicken",
+    "image": "baked-chicken.jpg",
     "difficulty": "medium",
     "time": "+30",
     "type": "dinner",
-    "ingredients": [
-      "chicken",
-      "spices"
-    ],
-    "preparation": "1. Preheat oven. 2. Season chicken. 3. Bake 40 minutes."
+    "ingredients": ["chicken", "spices"],
+    "preparation": "Preheat the oven. Season the chicken well and place it in a baking dish. Bake until golden and fully cooked."
   },
   {
     "id": "r034",
     "name": "Yogurt Bowl",
+    "image": "yogurt-bowl.jpg",
     "difficulty": "easy",
     "time": "5-10",
     "type": "breakfast",
-    "ingredients": [
-      "yogurt",
-      "fruit"
-    ],
-    "preparation": "1. Add yogurt to bowl. 2. Add fruit on top."
+    "ingredients": ["yogurt", "fruit"],
+    "preparation": "Place yogurt in a bowl and add fresh fruit on top. Serve immediately."
   },
   {
     "id": "r035",
     "name": "Vegetable Soup",
+    "image": "vegetable-soup.jpg",
     "difficulty": "easy",
     "time": "20-30",
     "type": "lunch",
-    "ingredients": [
-      "vegetables",
-      "broth"
-    ],
-    "preparation": "1. Chop vegetables. 2. Boil in broth 25 minutes."
+    "ingredients": ["vegetables", "broth"],
+    "preparation": "Chop the vegetables and boil them in broth until tender. Serve warm."
   },
+
   {
     "id": "r036",
     "name": "Chicken Sandwich",
+    "image": "chicken-sandwich.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "lunch",
-    "ingredients": [
-      "bread",
-      "chicken",
-      "lettuce"
-    ],
-    "preparation": "1. Cook chicken. 2. Toast bread. 3. Assemble sandwich."
+    "ingredients": ["bread", "chicken", "lettuce"],
+    "preparation": "Cook the chicken and toast the bread. Assemble the sandwich with lettuce and chicken and serve."
   },
   {
     "id": "r037",
     "name": "Rice with Egg",
+    "image": "rice-with-egg.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "lunch",
-    "ingredients": [
-      "rice",
-      "egg"
-    ],
-    "preparation": "1. Cook rice. 2. Fry egg. 3. Serve together."
+    "ingredients": ["rice", "tomato", "egg"],
+    "preparation": "Cook the rice and fry the egg separately. Serve together with tomato sauce."
   },
   {
     "id": "r038",
     "name": "Pasta with Cheese",
+    "image": "pasta-with-cheese.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "dinner",
-    "ingredients": [
-      "pasta",
-      "cheese"
-    ],
-    "preparation": "1. Cook pasta. 2. Add cheese. 3. Mix well."
+    "ingredients": ["pasta", "cheese"],
+    "preparation": "Cook the pasta and mix it with cheese until melted. Serve warm."
   },
   {
     "id": "r039",
     "name": "Banana Pancakes",
+    "image": "banana-pancakes.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "breakfast",
-    "ingredients": [
-      "banana",
-      "egg",
-      "flour"
-    ],
-    "preparation": "1. Mash banana. 2. Mix with egg and flour. 3. Cook pancakes."
+    "ingredients": ["banana", "egg", "flour"],
+    "preparation": "Mash the banana and mix it with egg and flour. Cook small pancakes in a pan until golden on both sides."
   },
   {
     "id": "r040",
     "name": "Chicken Pasta Salad",
+    "image": "chicken-pasta-salad.jpg",
     "difficulty": "easy",
     "time": "15-20",
     "type": "lunch",
-    "ingredients": [
-      "pasta",
-      "chicken",
-      "vegetables"
-    ],
-    "preparation": "1. Cook pasta. 2. Cook chicken. 3. Mix with vegetables."
+    "ingredients": ["pasta", "chicken", "vegetables"],
+    "preparation": "Cook the pasta and chicken separately. Mix them with vegetables and serve chilled or warm."
   },
+
   {
     "id": "r041",
     "name": "Egg Sandwich",
+    "image": "egg-sandwich.jpg",
     "difficulty": "easy",
     "time": "5-10",
     "type": "breakfast",
-    "ingredients": [
-      "egg",
-      "bread"
-    ],
-    "preparation": "1. Fry egg. 2. Toast bread. 3. Assemble sandwich."
+    "ingredients": ["egg", "bread"],
+    "preparation": "Fry the egg and toast the bread. Assemble the sandwich and serve."
   },
   {
     "id": "r042",
-    "name": "Chicken Fried Rice",
+    "name": "Ham Cheese Sandwich",
+    "image": "ham-cheese-sandwich.jpg",
     "difficulty": "easy",
-    "time": "15-20",
+    "time": "5-10",
     "type": "dinner",
-    "ingredients": [
-      "rice",
-      "chicken",
-      "soy sauce"
-    ],
-    "preparation": "1. Cook chicken. 2. Add rice. 3. Add soy sauce."
+    "ingredients": ["bread", "ham", "cheese"],
+    "preparation": "Place ham and cheese between slices of bread. Warm the sandwich until the cheese melts slightly."
   },
   {
     "id": "r043",
     "name": "Vegetable Pasta",
+    "image": "vegetable-pasta.jpg",
     "difficulty": "easy",
     "time": "15-20",
     "type": "dinner",
-    "ingredients": [
-      "pasta",
-      "vegetables"
-    ],
-    "preparation": "1. Cook pasta. 2. Cook vegetables. 3. Mix together."
+    "ingredients": ["pasta", "vegetables"],
+    "preparation": "Cook the pasta and vegetables separately. Combine them and serve warm."
   },
   {
     "id": "r044",
     "name": "Apple Oatmeal",
+    "image": "apple-oatmeal.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "breakfast",
-    "ingredients": [
-      "oats",
-      "apple",
-      "milk"
-    ],
-    "preparation": "1. Cook oats with milk. 2. Add chopped apple."
+    "ingredients": ["oats", "apple", "milk"],
+    "preparation": "Cook the oats with milk until creamy. Add chopped apple and serve warm."
   },
   {
     "id": "r045",
     "name": "Chicken Quesadilla",
+    "image": "chicken-quesadilla.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "dinner",
-    "ingredients": [
-      "tortilla",
-      "chicken",
-      "cheese"
-    ],
-    "preparation": "1. Fill tortilla with chicken and cheese. 2. Grill until melted."
+    "ingredients": ["tortilla", "chicken", "cheese"],
+    "preparation": "Fill the tortilla with chicken and cheese. Grill until the cheese melts and serve hot."
   },
+
   {
     "id": "r046",
     "name": "Rice Salad",
+    "image": "rice-salad.jpg",
     "difficulty": "easy",
     "time": "15-20",
     "type": "lunch",
-    "ingredients": [
-      "rice",
-      "vegetables"
-    ],
-    "preparation": "1. Cook rice. 2. Add vegetables. 3. Mix well."
+    "ingredients": ["rice", "vegetables"],
+    "preparation": "Cook the rice and let it cool slightly. Add vegetables and mix well. Serve fresh."
   },
   {
     "id": "r047",
     "name": "Chicken with Vegetables",
+    "image": "chicken-with-vegetables.jpg",
     "difficulty": "medium",
     "time": "20-30",
     "type": "dinner",
-    "ingredients": [
-      "chicken",
-      "vegetables"
-    ],
-    "preparation": "1. Cook chicken. 2. Add vegetables. 3. Cook until tender."
+    "ingredients": ["chicken", "vegetables"],
+    "preparation": "Cook the chicken until golden, then add vegetables and continue cooking until tender. Serve warm."
   },
   {
     "id": "r048",
     "name": "Toast with Jam",
+    "image": "toast-with-jam.jpg",
     "difficulty": "easy",
     "time": "5-10",
     "type": "breakfast",
-    "ingredients": [
-      "bread",
-      "jam"
-    ],
-    "preparation": "1. Toast bread. 2. Spread jam."
+    "ingredients": ["bread", "jam"],
+    "preparation": "Toast the bread and spread jam evenly on top. Serve immediately."
   },
   {
     "id": "r049",
     "name": "Chicken Soup with Noodles",
+    "image": "chicken-soup-with-noodles.jpg",
     "difficulty": "easy",
     "time": "20-30",
     "type": "lunch",
-    "ingredients": [
-      "chicken",
-      "noodles",
-      "broth"
-    ],
-    "preparation": "1. Boil broth. 2. Add chicken. 3. Add noodles and cook."
+    "ingredients": ["chicken", "vegetables", "noodles", "broth"],
+    "preparation": "Bring the broth to a boil and add chicken and vegetables. Add noodles and cook until tender. Serve hot."
   },
   {
     "id": "r050",
     "name": "Vegetable Omelette",
+    "image": "vegetable-omelette.jpg",
     "difficulty": "easy",
     "time": "10-15",
     "type": "breakfast",
-    "ingredients": [
-      "egg",
-      "vegetables"
-    ],
-    "preparation": "1. Beat eggs. 2. Add vegetables. 3. Cook in pan."
+    "ingredients": ["egg", "vegetables"],
+    "preparation": "Beat the eggs and mix them with chopped vegetables. Cook the mixture in a pan until set and lightly golden. Serve warm."
   }
 ]
