@@ -43,9 +43,15 @@ app.get("/recipes", async (req, res) => {
     const { ingredient, time, type } = req.query;
     const filter = {};
 
+    // MULTIPLE INGREDIENTS
     if (ingredient) {
-      filter.ingredients = { $in: [ingredient] };
+    if (Array.isArray(ingredient)) {
+        filter.ingredients = { $all: ingredient };
+    } else {
+        filter.ingredients = { $all: [ingredient] };
     }
+    }
+
 
     if (time) {
       filter.time = time;
