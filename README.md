@@ -1,5 +1,9 @@
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=22052624)
 
+https://github.com/EHB-MCT/web2-course-project-back-end-luciaarnaldo.git 
+https://github.com/EHB-MCT/web2-course-project-front-end-luciaarnaldo.git 
+
+
 # Recipe App 
 Recipe App is a web application that allows users to browse, filter and view recipes.
 Users can register and log in, apply filters by ingredients, time and type of food, and view detailed recipe information including images and preparation steps.
